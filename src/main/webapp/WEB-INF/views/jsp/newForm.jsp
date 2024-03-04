@@ -21,6 +21,7 @@
     <button type="submit">전송</button>
 
 </form>
+<button id="dbInsert">db저장</button>
 <button id="autoWrite">자동완성</button>
 </body>
 </html>

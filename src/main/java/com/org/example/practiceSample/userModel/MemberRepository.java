@@ -1,4 +1,4 @@
-package com.org.example.practiceSample.model;
+package com.org.example.practiceSample.userModel;
 
 import java.util.ArrayList;
 import java.util.HashMap;

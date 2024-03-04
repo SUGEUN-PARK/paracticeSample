@@ -18,6 +18,7 @@
         <ul>
             <li><a href="http://localhost:8080/newForm.do">회원가입</a></li>
             <li><a href="http://localhost:8080/memberList.do">회원목록</a></li>
+            <li><a href="http://localhost:8080/memberList2.do">회원목록2</a></li>
         </ul>
     </li>
 </ul>
