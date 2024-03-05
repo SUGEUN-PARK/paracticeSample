@@ -7,7 +7,7 @@
     </select>
 
     <insert id="insertUser">
-        INSERT into userInfo(name, age)
+        INSERT into t_userInfo(name, age)
             VALUES (#{name}, #{age})
     </insert>
 </mapper>
