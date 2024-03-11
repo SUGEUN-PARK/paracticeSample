@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public class samplemvcDaoImpl implements samplemvcDao{
@@ -27,6 +28,17 @@ public class samplemvcDaoImpl implements samplemvcDao{
 
         System.out.println("name :" +name+ ",age:"+age);
         sqlSession.insert(namespace +".insertUser",param);
+    }
+
+    @Override
+    public List<HashMap<String, Object>> loginUser(HashMap<String, Object> param) throws Exception {
+        return sqlSession.selectList(namespace+".loginUser",param);
+
+    }
+
+    @Override
+    public String loginCheck(Member memberDTO) {
+        return sqlSession.selectOne(namespace+".login_check", memberDTO);
     }
 
 

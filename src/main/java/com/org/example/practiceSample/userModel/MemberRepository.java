@@ -18,8 +18,8 @@ public class MemberRepository {
 
     }
     public  Member save(Member member){
-        member.setId(++sequence);
-        store.put(member.getId(), member);
+        member.setNum(++sequence);
+        store.put(member.getNum(), member);
 
         return member;
     }

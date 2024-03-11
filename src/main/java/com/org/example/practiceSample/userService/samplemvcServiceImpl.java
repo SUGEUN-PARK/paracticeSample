@@ -7,8 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class samplemvcServiceImpl implements samplemvcService{
@@ -24,5 +26,29 @@ public class samplemvcServiceImpl implements samplemvcService{
     @Override
     public void insert(HashMap<String, Object> param) throws Exception{
         dao.insert(param);
-    };
+    }
+
+    @Override
+    public List<HashMap<String, Object>> loginUser(HashMap<String, Object> param) throws Exception {
+        return dao.loginUser(param);
+    }
+
+    @Override
+    public String loginCheck(Member memberDTO, HttpSession session) {
+        String name = dao.loginCheck(memberDTO);
+        if(name != null){
+            session.setAttribute("id", memberDTO.getId());
+            session.setAttribute("name", memberDTO.getName());
+
+        }
+
+        return name;
+    }
+
+    @Override
+    public void logout(HttpSession session) {
+        session.invalidate();
+    }
+
+    ;
 }

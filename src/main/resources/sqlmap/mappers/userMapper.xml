@@ -10,4 +10,14 @@
         INSERT into t_userInfo(name, age)
             VALUES (#{name}, #{age})
     </insert>
+
+    <select id="loginUser" resultType="hashMap">
+        select * from t_userInfo where id = #{id} and password = #{password};
+    </select>
+
+    <select id="login_check" resultType="String">
+        select name
+        from t_userInfo
+        where id=#{id} and password=#{password}
+    </select>
 </mapper>
